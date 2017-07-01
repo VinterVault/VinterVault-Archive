@@ -4,8 +4,8 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="./small.png" />
-    <link href="./popoutbox.css" rel="stylesheet">
-    <link href="./radio.css" rel="stylesheet">  
+    <link href="./files/popoutbox.css" rel="stylesheet">
+    <link href="./files/radio.css?version=1" rel="stylesheet">  
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -46,8 +46,13 @@
           <input id="volume-input" type="range" max="100" min="0">
     </div>
                   <div class="setting2">
-                  <a class = "roboto" href = "https://www.youtube.com">Click here to dwnload or buy</a>
-          
+                  <a class = "roboto" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
+ echo $downlink ?>">Click here to dwnload or buy</a>
+          		  
+    </div>
+    <div id="setting3">
+    <a class = "roboto" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
+ echo $mirrorlink ?>">Mirror download/buy link</a>
     </div>
                 
               </div>
