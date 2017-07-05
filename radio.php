@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <title>VinterVault Player</title>
 <html>
-    <head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="./small.png" />
     <link href="./files/popoutbox.css" rel="stylesheet">
-    <link href="./files/radio.css?version=1" rel="stylesheet">  
+    <link href="./files/radio.css?version=1" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-    
   </head>
-
   <body>
-
-      <img id="backgroundimage" src="<?php require( 'archive_files/'.$_GET["item"].'.php');
- echo $imglink ?>">
+    <img id="backgroundimage" src="<?php require( 'archive_files/'.$_GET["item"].'.php');
+    echo $imglink ?>">
     <div id="wrapper">
-<div id="Absolute-Center" class="content">
- 
+      <div id="Absolute-Center" class="content">
+
           <img id="center" src="center.png">
           <a href="#settings"> <img id="albumpic" src="<?php require( 'archive_files/'.$_GET["item"].'.php');
  echo $imglink ?>"> </a>
-        
+
         <div id="video-placeholder"></div>
 
-          
 
-    
+
+
 
             <!--Popout-->
             <div id="settings" class="modalDialog">
               <!-- Modal content -->
               <div>
                 <a href="#close" title="Close" class="close">X</a>
-                
-          
+
+
                      <!---
                     <span id="mute-toggle" class="material-icons">volume_up</span>
                     --->
@@ -46,30 +42,30 @@
           <input id="volume-input" type="range" max="100" min="0">
     </div>
                   <div class="setting2">
-                  <a class = "roboto" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
- echo $downlink ?>">Click here to dwnload or buy</a>
-          		  
+                  <a class = "roboto reg" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
+ echo $downlink ?>">Click here to download or buy</a>
+
     </div>
     <div id="setting3">
-    <a class = "roboto" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
+    <a class = "roboto reg" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
  echo $mirrorlink ?>">Mirror download/buy link</a>
     </div>
-                
+
               </div>
 
             </div>
-            
-   
-    
 
-              <p class="roboto" id="titlebg"><?php require( 'archive_files/'.$_GET["item"].'.php');
+
+
+
+              <p id="titlebg"><?php require( 'archive_files/'.$_GET["item"].'.php');
  echo $displayname ?></p>
-        
-            <span id="current-time" class="roboto">0:00</span>
+
+            <span id="current-time">0:00</span>
 
             <input type="range" id="progress-bar" value="0">
 
-    <span id="duration" class="roboto">0:00</span>
+    <span id="duration">0:00</span>
 
            <!--- replaced with spacebar function, keeping for later use
             <i id="play" class="material-icons">play_arrow</i>
@@ -77,9 +73,9 @@
             --->
 
       </div>
-        
-             </div>  
-      
+
+             </div>
+
       <script>
       var player,
         time_update_interval = 0;
@@ -103,10 +99,10 @@
 
           function statechange(e){
         if (e.data === YT.PlayerState.ENDED) {
-            player.playVideo(); 
+            player.playVideo();
         }
     }
-          
+
       function initialize() {
 
         // Update the controls on load
