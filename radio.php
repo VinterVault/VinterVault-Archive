@@ -16,68 +16,40 @@
     echo $imglink ?>">
     <div id="wrapper">
       <div id="Absolute-Center" class="content">
-
-          <img id="center" src="center.png">
-          <a href="#settings"> <img id="albumpic" src="<?php require( 'archive_files/'.$_GET["item"].'.php');
- echo $imglink ?>"> </a>
-
-        <div id="video-placeholder"></div>
-
-
-
-
-
-            <!--Popout-->
-            <div id="settings" class="modalDialog">
-              <!-- Modal content -->
-              <div>
-                <a href="#close" title="Close" class="close">X</a>
-
-
-                     <!---
-                    <span id="mute-toggle" class="material-icons">volume_up</span>
-                    --->
-                  <div class="setting1">
-                  <span class = "roboto">Volume</span>
-          <input id="volume-input" type="range" max="100" min="0">
-    </div>
-                  <div class="setting2">
-                  <a class = "roboto reg" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
- echo $downlink ?>">Click here to download or buy</a>
-
-    </div>
-    <div id="setting3">
-    <a class = "roboto reg" href = "<?php require( 'archive_files/'.$_GET["item"].'.php');
- echo $mirrorlink ?>">Mirror download/buy link</a>
-    </div>
-
+        <img id="center" src="center.png">
+          <a href="#settings"> <img id="albumpic" src="<?php require( 'archive_files/'.$_GET["item"].'.php'); echo $imglink ?>"> </a>
+          <div id="video-placeholder"></div>
+          <!--Popout-->
+          <div id="settings" class="modalDialog">
+            <!-- Modal content -->
+            <div>
+              <a href="#close" title="Close" class="close">X</a>
+                <!---
+                <span id="mute-toggle" class="material-icons">volume_up</span>
+                --->
+                <div class="settingsPanelTop">
+                  <span id="volumetitle">Volume</span>
+                  <input id="volume-input" type="range" max="100" min="0">
+                </div>
+                <div class="settingsPanelBottom">
+                  <a id="downloadBuy" href="<?php require( 'archive_files/'.$_GET["item"].'.php'); echo $downlink ?>">Download or buy this song</a>
+                  <a id="mirrorDlBuy" href="<?php require( 'archive_files/'.$_GET["item"].'.php'); echo $mirrorlink ?>">mirror</a>
+                </div>
               </div>
-
             </div>
-
-
-
-
-              <p id="titlebg"><?php require( 'archive_files/'.$_GET["item"].'.php');
- echo $displayname ?></p>
-
+            <p id="titlebg"><?php require( 'archive_files/'.$_GET["item"].'.php'); echo $displayname ?></p>
             <span id="current-time">0:00</span>
-
             <input type="range" id="progress-bar" value="0">
+            <span id="duration">0:00</span>
 
-    <span id="duration">0:00</span>
-
-           <!--- replaced with spacebar function, keeping for later use
+            <!--- replaced with spacebar function, keeping for later use
             <i id="play" class="material-icons">play_arrow</i>
             <i id="pause" class="material-icons">pause</i>
             --->
-
-      </div>
-
-             </div>
-
-      <script>
-      var player,
+          </div>
+        </div>
+        <script>
+        var player,
         time_update_interval = 0;
 
       function onYouTubeIframeAPIReady() {
@@ -85,7 +57,7 @@
           width: 0,
           height: 0,
           videoId: <?php require( 'archive_files/'.$_GET["item"].'.php');
- echo "'".$vidlink."'" ?>,
+            echo "'".$vidlink."'" ?>,
           playerVars: {
             loop: 0,
               autoplay: 1,
